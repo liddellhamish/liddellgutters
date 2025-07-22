@@ -488,3 +488,18 @@ footer a {
     font-size: 1.2rem;
   }
 }
+.header-text {
+  padding-bottom: 2rem; /* Add more space below button */
+}
+@media (max-width: 768px) {
+  .header-image {
+    padding-bottom: 3rem; /* Ensures space before next section */
+  }
+
+  .header-text {
+    padding-bottom: 4rem; /* Extra space for button */
+  }
+}
+.cta-btn {
+  margin-bottom: 2rem;
+}
