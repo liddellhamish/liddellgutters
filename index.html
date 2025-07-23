@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hamish Lidell Gutters and Maintenance</title>
+  <title>Hamish Liddell Gutters and Maintenance</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <nav class="navbar">
       <div class="logo">Hamish Liddell Gutters and Maintenance</div>
+      
       <!-- Hamburger button -->
-  <button class="nav-toggle" aria-label="Toggle navigation">
-    <span class="hamburger"></span>
-  </button>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
@@ -32,47 +34,49 @@
       </div>
     </div>
   </header>
-<section class="features">
 
-  <!-- Quick Highlights -->
-  <section class="highlights">
-    <div class="highlight-box">
-      <h3>✔ Fast Turnaround</h3>
-      <p>Quick, efficient installations with minimal disruption to your property.</p>
-    </div>
-    <div class="highlight-box">
-      <h3>✔ Affordable Pricing</h3>
-      <p>We offer competitive rates without compromising on quality.</p>
-    </div>
-    <div class="highlight-box">
-      <h3>✔ Quality Materials</h3>
-      <p>Only premium PVC and Aluminium materials that last for years.</p>
-    </div>
-  </section>
+  <section class="features">
 
-  <!-- Why Choose Us -->
-  <section class="why-choose-home">
-    <h2>Why Choose Liddell Gutters</h2>
-    <ul class="choose-list">
-      <li>✔ Registered, owner-managed business</li>
-      <li>✔Serving builders, homeowners, and estates</li>
-      <li>✔Precision laser-level installations</li>
-      <li>✔Trusted in Cape Town suburbs, schools, and churches</li>
-      <li>✔We respect your privacy and time</li>
-    </ul>
-  </section>
+    <!-- Quick Highlights -->
+    <section class="highlights">
+      <div class="highlight-box">
+        <h3>✔ Fast Turnaround</h3>
+        <p>Quick, efficient installations with minimal disruption to your property.</p>
+      </div>
+      <div class="highlight-box">
+        <h3>✔ Affordable Pricing</h3>
+        <p>We offer competitive rates without compromising on quality.</p>
+      </div>
+      <div class="highlight-box">
+        <h3>✔ Quality Materials</h3>
+        <p>Only premium PVC and Aluminium materials that last for years.</p>
+      </div>
+    </section>
 
-  <!-- Testimonials (optional) -->
-  <section class="testimonials">
-    <h2>What Our Clients Say</h2>
-    <blockquote>
-      “Excellent service from start to finish. My gutters have never looked better!”  
-      <footer>– Jason M., Durbanville</footer>
-    </blockquote>
-    <blockquote>
-      “Prompt, professional and reliable – highly recommended.”  
-      <footer>– Ayesha K., Claremont</footer>
-    </blockquote>
+    <!-- Why Choose Us -->
+    <section class="why-choose-home">
+      <h2>Why Choose Liddell Gutters</h2>
+      <ul class="choose-list">
+        <li>✔ Registered, owner-managed business</li>
+        <li>✔ Serving builders, homeowners, and estates</li>
+        <li>✔ Precision laser-level installations</li>
+        <li>✔ Trusted in Cape Town suburbs, schools, and churches</li>
+        <li>✔ We respect your privacy and time</li>
+      </ul>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <h2>What Our Clients Say</h2>
+      <blockquote>
+        “Excellent service from start to finish. My gutters have never looked better!”  
+        <footer>– Jason M., Durbanville</footer>
+      </blockquote>
+      <blockquote>
+        “Prompt, professional and reliable – highly recommended.”  
+        <footer>– Ayesha K., Claremont</footer>
+      </blockquote>
+    </section>
   </section>
 
   <!-- Footer -->
@@ -83,6 +87,16 @@
       <p>Phone: 0697978469 / 0765414843</p>
     </div>
   </footer>
+
+  <script>
+    // Simple hamburger menu toggle script
+    const toggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
 
   <script src="scripts.js"></script>
 </body>
