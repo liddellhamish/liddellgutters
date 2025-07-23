@@ -433,7 +433,7 @@ footer a {
   width: 25px;
   height: 3px;
   background-color: #333;
-  display: ;
+  display:block;
   position: relative;
   transition: all 0.3s ease-in-out;
 }
