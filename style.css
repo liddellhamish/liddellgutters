@@ -420,9 +420,18 @@ footer a {
 }
 /* Hide nav-links on small screens by default */
 .nav-links {
-  display: flex;
+  display: none;
   gap: 2rem;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #2e3a59;
+  width: 200px;
+  padding: 1rem;
+  border-radius: 0 0 0 8px;
 }
+
 
 .nav-toggle {
   display: none;
@@ -505,4 +514,18 @@ footer a {
 }
 .cta-btn {
   margin-bottom: 2rem;
+}
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    background: none;
+    width: auto;
+    padding: 0;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
 }
