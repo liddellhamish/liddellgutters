@@ -17,8 +17,17 @@ body {
 
 .nav-links {
   list-style: none;
-  display: flex;
-  gap: 1.5rem;
+  display: none;
+  gap: 2rem;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #2e3a59;
+  width: 200px;
+  padding: 1rem;
+  border-radius: 0 0 0 8px;
+  z-index: 999;
 }
 
 .nav-links a {
@@ -31,14 +40,95 @@ body {
   text-decoration: underline;
 }
 
+.nav-links.open {
+  display: flex;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+
+.nav-toggle .hamburger {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  display: block;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: "";
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-toggle .hamburger::before {
+  top: -8px;
+}
+
+.nav-toggle .hamburger::after {
+  top: 8px;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links li {
+    margin-bottom: 1rem;
+  }
+
+  .nav-links li a {
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  .header-image {
+    padding-bottom: 3rem;
+  }
+
+  .header-text {
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    background: none;
+    width: auto;
+    padding: 0;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+}
+
 .header-image {
   position: relative;
-  text-align: center;
+  height: 60vh;
+  overflow: hidden;
 }
 
 .header-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
@@ -54,11 +144,13 @@ body {
   max-width: 500px;
   text-align: center;
   border-radius: 8px;
+  padding-bottom: 2rem;
 }
 
 .cta-btn {
   display: inline-block;
   margin-top: 1rem;
+  margin-bottom: 2rem;
   background: #00a86b;
   color: white;
   padding: 0.6rem 1.2rem;
@@ -116,6 +208,7 @@ main {
 .contact-form button:hover {
   background: #1c2539;
 }
+
 .highlights {
   display: flex;
   flex-wrap: wrap;
@@ -182,18 +275,7 @@ footer {
 footer a {
   color: #ddd;
 }
-.header-image {
-  position: relative;
-  height: 60vh; /* reduce from full height */
-  overflow: hidden;
-}
 
-.header-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 .services-hero {
   background: #2e3a59;
   color: white;
@@ -269,6 +351,7 @@ footer a {
   margin-top: 1rem;
   display: inline-block;
 }
+
 .about-section {
   padding: 60px 20px;
   background-color: #f9f9f9;
@@ -323,6 +406,7 @@ footer a {
   height: auto;
   border-radius: 12px;
 }
+
 .about-page {
   max-width: 1000px;
   margin: 0 auto;
@@ -360,6 +444,7 @@ footer a {
 .btn:hover {
   background-color: #225e5e;
 }
+
 .contact-hero {
   background-color: #f3f3f3;
   padding: 2rem;
@@ -417,115 +502,4 @@ footer a {
 .map-section {
   padding: 2rem;
   text-align: center;
-}
-/* Hide nav-links on small screens by default */
-.nav-links {
-  display: none;
-  gap: 2rem;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  right: 0;
-  background-color: #2e3a59;
-  width: 200px;
-  padding: 1rem;
-  border-radius: 0 0 0 8px;
-}
-
-
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-}
-
-.nav-toggle .hamburger {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  display:block;
-  position: relative;
-  transition: all 0.3s ease-in-out;
-}
-
-.nav-toggle .hamburger::before,
-.nav-toggle .hamburger::after {
-  content: "";
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  position: absolute;
-  left: 0;
-  transition: all 0.3s ease-in-out;
-}
-
-.nav-toggle .hamburger::before {
-  top: -8px;
-}
-
-.nav-toggle .hamburger::after {
-  top: 8px;
-}
-
-/* Responsive styling */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    position: absolute;
-    top: 60px; /* adjust based on header height */
-    right: 0;
-    background-color: #2e3a59;
-    width: 200px;
-    padding: 1rem;
-    border-radius: 0 0 0 8px;
-    display: none; /* hide by default */
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .nav-links li {
-    margin-bottom: 1rem;
-  }
-
-  .nav-links li a {
-    color: white;
-    font-size: 1.2rem;
-  }
-}
-.header-text {
-  padding-bottom: 2rem; /* Add more space below button */
-}
-@media (max-width: 768px) {
-  .header-image {
-    padding-bottom: 3rem; /* Ensures space before next section */
-  }
-
-  .header-text {
-    padding-bottom: 4rem; /* Extra space for button */
-  }
-}
-.cta-btn {
-  margin-bottom: 2rem;
-}
-@media (min-width: 769px) {
-  .nav-links {
-    display: flex !important;
-    flex-direction: row;
-    position: static;
-    background: none;
-    width: auto;
-    padding: 0;
-  }
-
-  .nav-toggle {
-    display: none;
-  }
 }
